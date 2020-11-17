@@ -138,7 +138,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, textsGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("../assets/data/data.csv").then(function(data, err) {
+d3.csv("assets/data/data.csv").then(function(data, err) {
   if (err) throw err;
 
   // parse data
@@ -155,11 +155,6 @@ d3.csv("../assets/data/data.csv").then(function(data, err) {
   var xLinearScale = xScale(data, chosenXAxis);
 
   var yLinearScale = yScale(data, chosenYAxis);
-
-  // // Create y scale function
-  // var yLinearScale = d3.scaleLinear()
-  //   .domain([0, d3.max(data, d => d.num_hits)])
-  //   .range([height, 0]);
 
   // Create initial axis functions
   var bottomAxis = d3.axisBottom(xLinearScale);
